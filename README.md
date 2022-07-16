@@ -29,3 +29,11 @@ Good luck and happy coding! ☕
 - There are 2 tests defined in `user.integration.spec`.
 - Implement the tests according to the description.
 - Extra points for using the `UserCreator` 😅!
+
+## Test 5: Docker
+- Running `npm run report` creates code coverage statistics in html
+- Complete the `Dockerfile`:
+  - It generates the html code coverage report
+  - It should spin up a webservice
+  - It serves the static html on port 80
+  - When running the docker, you should see the report
