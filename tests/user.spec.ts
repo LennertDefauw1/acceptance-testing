@@ -2,9 +2,10 @@ import {IUser, UserCreator} from "../src/userCreator";
 
 describe('User', () => {
     test('UserCreator implements functions', () => {
-        expect(typeof (UserCreator as any).withFirstName).toBe("function");
-        expect(typeof (UserCreator as any).withLastName).toBe("function");
-        expect(typeof (UserCreator as any).create).toBe("function");
+        const creator = new UserCreator();
+        expect((creator as any).withFirstName).toBeDefined();
+        expect((creator as any).withLastName).toBeDefined();
+        expect((creator as any).create).toBeDefined();
     })
 
     test('UserCreator creates user', () => {
