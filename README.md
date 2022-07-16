@@ -1,5 +1,5 @@
 # Jimber Technical Tests
-run `npm install` and run `npm run test` to run tests with watcher.  
+Run `npm install` and run `npm run test` to run tests with watcher.  
 The goal is to make all tests pass, following the guide below.  
 If something is unclear, you are free to ask anything!  
 If you are stuck on some sections, skip them!  
