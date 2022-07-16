@@ -1,5 +1,3 @@
-import {IUser, UserCreator} from "../src/userCreator";
-
 describe('User Integration', () => {
     test('UserService getUsers returns 1 user', () => {
         throw new Error("TODO");
