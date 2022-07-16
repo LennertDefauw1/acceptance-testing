@@ -37,4 +37,4 @@ Good luck and happy coding! ☕
   - It generates the html code coverage report
   - It should spin up a webservice
   - It serves the static html on port 80
-  - When running the docker, you should see the report
+  - When routing to the container while running, it should render the html
