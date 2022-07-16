@@ -1,6 +1,7 @@
 # Jimber Technical Tests
 Run `npm install` and run `npm run test` to run tests with watcher.  
 The goal is to make all tests pass, following the guide below.  
+Feel free to install any npm package you want.
 If something is unclear, you are free to ask anything!  
 If you are stuck on some sections, skip them!  
 Good luck and happy coding! ☕
