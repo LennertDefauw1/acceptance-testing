@@ -1,5 +1,5 @@
 describe('User Integration', async () => {
-    test('UserService getUsers returns 1 user', () => {
+    test('UserService getUsers returns 1 user', async () => {
         throw new Error("TODO");
     })
 
