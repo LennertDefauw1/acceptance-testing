@@ -1,9 +1,9 @@
-describe('User Integration', () => {
+describe('User Integration', async () => {
     test('UserService getUsers returns 1 user', () => {
         throw new Error("TODO");
     })
 
-    test('UserService inserting an existing user throws an error', () => {
+    test('UserService inserting an existing user throws an error', async () => {
         throw new Error("TODO");
     })
 })
