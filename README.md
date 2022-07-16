@@ -1,9 +1,9 @@
 # Jimber Technical Tests
-run `npm install` and run `npm run test` to run tests with watcher.
-The goal is to make all tests pass, following the guide below.
-If something is unclear, you are free to ask anything!
-If you are stuck on some sections, skip them!
-Good luck and happy coding!
+run `npm install` and run `npm run test` to run tests with watcher.  
+The goal is to make all tests pass, following the guide below.  
+If something is unclear, you are free to ask anything!  
+If you are stuck on some sections, skip them!  
+Good luck and happy coding! ☕
 
 ## Test 1: Fibonacci
 - Complete functions `getFibonnaciNumbersNonRecursive` and `getFibonnaciAtIndexWithRecursion`.
@@ -28,4 +28,4 @@ Good luck and happy coding!
 - Given `UserService` and `UserRepository`, these do not need any modification!
 - There are 2 tests defined in `user.integration.spec`.
 - Implement the tests according to the description.
-- Extra points for using the `UserCreator`!
+- Extra points for using the `UserCreator` 😅!
