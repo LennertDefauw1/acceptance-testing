@@ -6,7 +6,7 @@ describe('Crypto Utils', () => {
             value: "This is a secret message",
             sent: new Date()
         }
-        const encryptedMessage = await (cryptoUtils as any).encrpyt(message);
+        const encryptedMessage = await (cryptoUtils as any).encrypt(message);
         const decryptMessage = await (cryptoUtils as any).decrypt(message);
 
         expect(message).not.toEqual(encryptedMessage);
@@ -15,7 +15,7 @@ describe('Crypto Utils', () => {
 
     test("Encrypt and Decrypt fake message", async () => {
         const fakeEncryption = ";sdufauilgfhjalfgbnsfhjdbgjlshbn";
-        expect(async () => await (cryptoUtils as any).decrypt(fakeEncryption)).toThrowError("Not valid");
+        await expect(async () => await (cryptoUtils as any).decrypt(fakeEncryption)).rejects.toThrowError("Not valid");
     })
 
     test("Sign message", async () => {
@@ -26,7 +26,8 @@ describe('Crypto Utils', () => {
         const signedMessage = await (cryptoUtils as any).sign(message);
         expect(signedMessage.signature).toBeDefined();
         expect(signedMessage.payload).toEqual(message);
-        expect(async () => await (cryptoUtils as any).validateSignature(signedMessage)).not.toThrowError();
+        const isValid = await (cryptoUtils as any).validateSignature(signedMessage);
+        expect(isValid).toBe(true);
     })
 
     test("Validate fake message", async () => {
@@ -38,6 +39,7 @@ describe('Crypto Utils', () => {
             }
         }
 
-        expect(async () => await (cryptoUtils as any).validateSignature(fakeSignedMessage)).toThrowError("Wrong signature");
+        const isValid = await (cryptoUtils as any).validateSignature(fakeSignedMessage);
+        expect(isValid).toBe(false);
     })
 })
