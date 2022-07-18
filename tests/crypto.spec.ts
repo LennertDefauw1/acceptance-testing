@@ -7,7 +7,7 @@ describe('Crypto Utils', () => {
             sent: new Date()
         }
         const encryptedMessage = await (cryptoUtils as any).encrypt(message);
-        const decryptMessage = await (cryptoUtils as any).decrypt(message);
+        const decryptMessage = await (cryptoUtils as any).decrypt(encryptedMessage);
 
         expect(message).not.toEqual(encryptedMessage);
         expect(message).toEqual(decryptMessage);
