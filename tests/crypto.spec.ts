@@ -4,7 +4,7 @@ describe('Crypto Utils', () => {
     test("Encrypt and Decrypt message", async () => {
         const message = {
             value: "This is a secret message",
-            sent: new Date()
+            sent: (new Date()).toString()
         }
         const encryptedMessage = await (cryptoUtils as any).encrypt(message);
         const decryptMessage = await (cryptoUtils as any).decrypt(encryptedMessage);
