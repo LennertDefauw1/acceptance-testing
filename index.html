@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+
+        > jimbertestproject@1.0.0 report
+        > jest --coverage
+
+        FAIL  tests/fibonacci.spec.ts
+        ● Fibonacci Utils › getFibonnaciAtIndexWithRecursion should return correct number
+
+        expect(received).toEqual(expected) // deep equality
+
+        Expected: 13
+        Received: 0
+
+        11 |
+        12 |     test('getFibonnaciAtIndexWithRecursion should return correct number', () => {
+        > 13 |         expect(getFibonnaciAtIndexWithRecursion(7)).toEqual(13)
+        |                                                     ^
+        14 |         expect(getFibonnaciAtIndexWithRecursion(12)).toEqual(144)
+        15 |     })
+        16 | })
+
+
+        FAIL  tests/user.integration.spec.ts
+        ● Console
+
+        console.log
+        {
+        firstName: 'Lennert',
+        lastName: 'Defauw',
+        email: 'john.doe@jimber.org'
+        }
+
+        at tests/user.integration.spec.ts:17:17
+
+        console.log
+        undefined
+
+        at tests/user.integration.spec.ts:20:17
+
+        console.log
+        []
+
+        at tests/user.integration.spec.ts:21:9
+
+        ● User Integration › UserService inserting an existing user throws an error
+
+        TODO
+
+        26 |
+        27 |     test('UserService inserting an existing user throws an error', async () => {
+        > 28 |         throw new Error("TODO");
+        |               ^
+        29 |     })
+        30 | })
+        31 |
+
+        at tests/user.integration.spec.ts:28:15
+        at step (tests/user.integration.spec.ts:33:23)
+        at Object.next (tests/user.integration.spec.ts:14:53)
+        at tests/user.integration.spec.ts:8:71
+
+                PASS  tests/user.spec.ts
+                FAIL  tests/crypto.spec.ts
+                ● Console
+
+                console.log
+                foo
+
+                at Object.log [as encrypt] (src/cryptoUtils.ts:19:37)
+
+                ● Crypto Utils › Encrypt and Decrypt message
+
+                TypeError: cryptoUtils.decrypt is not a function
+
+                8 |         }
+                9 |         const encryptedMessage = await (cryptoUtils as any).encrypt(message);
+                > 10 |         const decryptMessage = await (cryptoUtils as any).decrypt(encryptedMessage);
+                |                                                           ^
+                11 |
+                12 |         expect(message).not.toEqual(encryptedMessage);
+                13 |         expect(message).toEqual(decryptMessage);
+
+                at tests/crypto.spec.ts:10:59
+                at step (tests/crypto.spec.ts:33:23)
+                at Object.next (tests/crypto.spec.ts:14:53)
+                at fulfilled (tests/crypto.spec.ts:5:58)
+
+                ● Crypto Utils › Encrypt and Decrypt fake message
+
+                expect(received).rejects.toThrowError(expected)
+
+                Expected substring: "Not valid"
+                Received message:   "cryptoUtils.decrypt is not a function"
+
+                16 |     test("Encrypt and Decrypt fake message", async () => {
+                17 |         const fakeEncryption = ";sdufauilgfhjalfgbnsfhjdbgjlshbn";
+                > 18 |         await expect(async () => await (cryptoUtils as any).decrypt(fakeEncryption)).rejects.toThrowError("Not valid");
+                |                                                             ^
+                19 |     })
+                20 |
+                21 |     test("Sign message", async () => {
+
+                at tests/crypto.spec.ts:18:61
+                at step (tests/crypto.spec.ts:33:23)
+                at Object.next (tests/crypto.spec.ts:14:53)
+                at tests/crypto.spec.ts:8:71
+                    at tests/crypto.spec.ts:18:22
+                    at Object.toThrowError (node_modules/expect/build/index.js:223:58)
+                    at tests/crypto.spec.ts:18:94
+                    at step (tests/crypto.spec.ts:33:23)
+
+                    16 |     test("Encrypt and Decrypt fake message", async () => {
+                    17 |         const fakeEncryption = ";sdufauilgfhjalfgbnsfhjdbgjlshbn";
+                    > 18 |         await expect(async () => await (cryptoUtils as any).decrypt(fakeEncryption)).rejects.toThrowError("Not valid");
+                    |                                                                                              ^
+                    19 |     })
+                    20 |
+                    21 |     test("Sign message", async () => {
+
+                    at Object.toThrowError (node_modules/expect/build/index.js:241:22)
+                    at tests/crypto.spec.ts:18:94
+                    at step (tests/crypto.spec.ts:33:23)
+                    at Object.next (tests/crypto.spec.ts:14:53)
+                    at tests/crypto.spec.ts:8:71
+
+                            ● Crypto Utils › Sign message
+
+                            TypeError: cryptoUtils.sign is not a function
+
+                            24 |             sent: new Date()
+                            25 |         }
+                            > 26 |         const signedMessage = await (cryptoUtils as any).sign(message);
+                            |                                                          ^
+                            27 |         expect(signedMessage.signature).toBeDefined();
+                            28 |         expect(signedMessage.payload).toEqual(message);
+                            29 |         const isValid = await (cryptoUtils as any).validateSignature(signedMessage);
+
+                            at tests/crypto.spec.ts:26:58
+                            at step (tests/crypto.spec.ts:33:23)
+                            at Object.next (tests/crypto.spec.ts:14:53)
+                            at tests/crypto.spec.ts:8:71
+
+                                    ● Crypto Utils › Validate fake message
+
+                                    TypeError: cryptoUtils.validateSignature is not a function
+
+                                    40 |         }
+                                    41 |
+                                    > 42 |         const isValid = await (cryptoUtils as any).validateSignature(fakeSignedMessage);
+                                    |                                                    ^
+                                    43 |         expect(isValid).toBe(false);
+                                    44 |     })
+                                    45 | })
+
+                                    at tests/crypto.spec.ts:42:52
+                                    at step (tests/crypto.spec.ts:33:23)
+                                    at Object.next (tests/crypto.spec.ts:14:53)
+                                    at tests/crypto.spec.ts:8:71
+
+                                            =============================== Coverage summary ===============================
+                                            Statements   : 98.3% ( 58/59 )
+                                            Branches     : 85.71% ( 6/7 )
+                                            Functions    : 100% ( 15/15 )
+                                            Lines        : 98% ( 49/50 )
+                                            ================================================================================
+                                            Test Suites: 3 failed, 1 passed, 4 total
+                                            Tests:       6 failed, 5 passed, 11 total
+                                            Snapshots:   0 total
+                                            Time:        2.686 s, estimated 3 s
+                                            Ran all test suites.
+
+    </div>
+</body>
+</html>
